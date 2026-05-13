@@ -36,6 +36,10 @@ export function getUploadsDirectory() {
   return path.join(getStorageRoot(), 'uploads')
 }
 
+export function getBundledUploadsDirectory() {
+  return path.join(process.cwd(), 'public', 'uploads')
+}
+
 export async function readDatabase() {
   const dbPath = getDatabasePath()
 

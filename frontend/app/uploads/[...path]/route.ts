@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { promises as fs } from 'fs'
 import path from 'path'
-import { getUploadsDirectory } from '@/lib/storage'
+import { getBundledUploadsDirectory, getUploadsDirectory } from '@/lib/storage'
 
 export const runtime = 'nodejs'
 
@@ -32,10 +32,16 @@ export async function GET(_request: Request, { params }: any) {
     return NextResponse.json({ error: 'File not found' }, { status: 404 })
   }
 
-  const filePath = path.join(getUploadsDirectory(), fileName)
-
   try {
-    const fileBuffer = await fs.readFile(filePath)
+    const runtimeFilePath = path.join(getUploadsDirectory(), fileName)
+    const bundledFilePath = path.join(getBundledUploadsDirectory(), fileName)
+
+    let fileBuffer: Buffer
+    try {
+      fileBuffer = await fs.readFile(runtimeFilePath)
+    } catch {
+      fileBuffer = await fs.readFile(bundledFilePath)
+    }
 
     return new NextResponse(fileBuffer, {
       headers: {
