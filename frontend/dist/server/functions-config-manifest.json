@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "functions": {
+    "/api/comments": {},
+    "/api/db": {},
+    "/api/guestbook": {},
+    "/api/upload": {},
+    "/uploads/[...path]": {}
+  }
+}

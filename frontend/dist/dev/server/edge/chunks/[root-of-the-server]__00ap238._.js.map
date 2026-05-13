@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/frontend/lib/supabase/proxy.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\n\nexport async function updateSession(request: any) {\n  return NextResponse.next()\n}\r\n"],"names":["updateSession","request","next"],"mappings":";;;;AAAA;AAAA;;AAEO,eAAeA,cAAcC,OAAY;IAC9C,OAAO,yNAAY,CAACC,IAAI;AAC1B"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/frontend/middleware.ts"],"sourcesContent":["import { updateSession } from '@/lib/supabase/proxy'\nimport { type NextRequest } from 'next/server'\n\nexport async function middleware(request: NextRequest) {\n  return await updateSession(request)\n}\n\nexport const config = {\n  matcher: [\n    /*\n     * Match all request paths except:\n     * - _next/static (static files)\n     * - _next/image (image optimization files)\n     * - favicon.ico (favicon file)\n     * - images - .svg, .png, .jpg, .jpeg, .gif, .webp\n     * Feel free to modify this pattern to include more paths.\n     */\n    '/((?!_next/static|_next/image|favicon.ico|.*\\\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',\n  ],\n}\n"],"names":["middleware","request","config","matcher"],"mappings":";;;;;;AAAA;;AAGO,eAAeA,WAAWC,OAAoB;IACnD,OAAO,MAAM,IAAA,6JAAa,EAACA;AAC7B;AAEO,MAAMC,SAAS;IACpBC,SAAS;QACP;;;;;;;KAOC,GACD;KACD;AACH"}}]
+}

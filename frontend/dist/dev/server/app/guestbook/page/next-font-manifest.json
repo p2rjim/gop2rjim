@@ -1,0 +1,8 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/frontend/app/guestbook/page": []
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

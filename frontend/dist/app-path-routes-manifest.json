@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/activities/page": "/activities",
+  "/admin/page": "/admin",
+  "/api/comments/route": "/api/comments",
+  "/api/db/route": "/api/db",
+  "/api/guestbook/route": "/api/guestbook",
+  "/api/upload/route": "/api/upload",
+  "/guestbook/page": "/guestbook",
+  "/illustrations/page": "/illustrations",
+  "/page": "/",
+  "/uploads/[...path]/route": "/uploads/[...path]",
+  "/works/page": "/works"
+}
